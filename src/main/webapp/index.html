@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>TravelUpp</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="app-container">
+
+    <section id="login-screen" class="screen">
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <div class="logo-circle" id="login-logo">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+          </div>
+          <h1 class="auth-title">TravelUpp</h1>
+          <p class="auth-sub">El viaje que sueñas empieza con un match.</p>
+          <form id="login-form">
+            <div class="field">
+              <label class="field-label">Número de teléfono</label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span class="input-prefix">+34</span>
+                <input type="tel" id="login-phone" class="field-input phone-input" placeholder="600 000 000" maxlength="11" required>
+              </div>
+            </div>
+            <div id="login-error" class="error-msg"></div>
+            <button type="submit" class="btn btn-auth">Iniciar Sesión</button>
+          </form>
+          <div class="auth-footer">
+            <p>¿No tienes cuenta? <button type="button" id="go-to-register" class="link-btn">Regístrate</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register-screen" class="screen">
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <div class="logo-circle">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+          </div>
+          <h1 class="auth-title">TravelUpp</h1>
+          <p class="auth-sub">Únete a TravelUpp.</p>
+          <form id="register-form">
+            <div class="field">
+              <label class="field-label">Nombre</label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <input type="text" id="register-name" class="field-input" placeholder="Tu nombre" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label">Número de teléfono</label>
+              <div class="input-icon-wrap">
+                <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span class="input-prefix">+34</span>
+                <input type="tel" id="register-phone" class="field-input phone-input" placeholder="600 000 000" maxlength="11" required>
+              </div>
+            </div>
+            <div id="register-error" class="error-msg"></div>
+            <button type="submit" class="btn btn-auth">Crear Cuenta</button>
+          </form>
+          <div class="auth-footer">
+            <p>¿Ya tienes cuenta? <button type="button" id="go-to-login" class="link-btn">Inicia sesión</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="code-screen" class="screen">
+      <div class="auth-wrap">
+        <div class="auth-card" style="position:relative">
+          <button type="button" id="btn-back-to-auth" class="auth-back-btn" aria-label="Volver">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div class="logo-circle">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+          </div>
+          <h1 class="auth-title">TravelUpp</h1>
+          <p class="auth-sub">Introduce el código de verificación</p>
+          <form id="code-form">
+            <div class="field">
+              <label class="field-label">Código de confirmación</label>
+              <input type="text" id="code-input" class="field-input code-input" placeholder="XXX-XXX" maxlength="7" required>
+            </div>
+            <div id="code-error" class="error-msg"></div>
+            <label class="checkbox-wrap">
+              <input type="checkbox" id="keep-session">
+              <span>Mantener sesión iniciada en este dispositivo</span>
+            </label>
+            <button type="submit" class="btn btn-auth">Confirmar</button>
+          </form>
+          <div class="auth-footer">
+            <p>¿No te ha llegado? <button type="button" id="resend-code" class="link-btn">Reenviar</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="main-app" class="hidden">
+      <div class="app-layout">
+        <header class="app-header">
+          <div class="header-inner">
+            <h1 class="app-title">TravelUpp</h1>
+            <div style="position:relative;display:inline-flex">
+              <button id="btn-settings" class="icon-btn" aria-label="Ajustes">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </button>
+              <span id="settings-badge" class="badge-dot icon-badge" style="display:none">0</span>
+            </div>
+          </div>
+        </header>
+
+        <nav class="tabs-bar">
+          <div class="tabs-inner">
+            <button class="tab-item active" data-tab="my-trips">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+              <span>Mis Viajes</span>
+            </button>
+            <button class="tab-item" data-tab="new-trip">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+              <span>Nuevo Viaje</span>
+            </button>
+            <button class="tab-item" data-tab="current-trips">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Viajes en Curso</span>
+            </button>
+          </div>
+        </nav>
+
+        <main class="app-content">
+          <section id="tab-my-trips" class="tab-panel active">
+            <div class="content-pad">
+              <h2 class="section-title">Mis Viajes</h2>
+              <div id="my-trips-list" class="trip-grid"></div>
+              <div id="my-trips-empty" class="empty-state">
+                <div class="empty-icon-box" style="background:#E8F2FF">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                </div>
+                <h3 class="empty-title">¡Bienvenido a TravelUpp!</h3>
+                <p class="empty-desc">Aún no tienes ningún viaje. Comienza a organizar tu primera aventura.</p>
+                <button class="btn btn-create" id="go-to-new-trip-from-empty">Organizar mi primer viaje</button>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-new-trip" class="tab-panel">
+            <div class="content-pad">
+              <div id="new-trip-selector">
+                <h2 class="new-trip-heading">Organiza Nuevo Viaje</h2>
+                <div class="trip-mode-selector">
+                  <button id="btn-mode-auto" class="mode-card">
+                    <div class="mode-card-icon" style="background:rgba(255,255,255,0.2)">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4m0 10v4m-9-9h4m10 0h4"/><circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 2"/></svg>
+                    </div>
+                    <h3 class="mode-card-title" style="color:#fff">Automático</h3>
+                    <p class="mode-card-desc" style="color:rgba(255,255,255,0.9)">Deja que TravelUpp te ayude a encontrar el viaje perfecto para ti o para tu grupo</p>
+                    <div class="mode-card-features">
+                      <span class="mode-card-feature">✓ Encuesta personalizada para cada participante</span>
+                      <span class="mode-card-feature">✓ Encuentra el mejor Match para el mejor destino y alojamiento</span>
+                    </div>
+                    <span class="mode-card-badge">Próximamente</span>
+                  </button>
+                  <button id="btn-mode-manual" class="mode-card">
+                    <div class="mode-card-icon" style="background:#FFF5F0">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EEB19A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </div>
+                    <h3 class="mode-card-title" style="color:var(--fg)">Manual</h3>
+                    <p class="mode-card-desc" style="color:var(--gray)">Ya sabes donde vas, solo necesitas organizar el viaje</p>
+                    <div class="mode-card-features">
+                      <span class="mode-card-feature">✓ Crea el viaje con destino elegido</span>
+                      <span class="mode-card-feature">✓ Organiza tu itinerario de viaje</span>
+                      <span class="mode-card-feature">✓ Guarda en el álbum todos tus recuerdos</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <div id="new-trip-manual" class="hidden">
+                <button id="btn-back-to-modes" class="btn-back" style="margin-bottom:1rem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                  Volver
+                </button>
+                <form id="new-trip-form" class="trip-form">
+                  <div class="field">
+                    <label class="field-label">Imagen de portada</label>
+                    <button type="button" id="btn-trip-cover" class="btn btn-cover" style="width:100%">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                      Añadir foto de portada
+                    </button>
+                    <input type="file" accept="image/*" id="trip-cover-file" style="display:none">
+                    <input type="hidden" id="trip-cover" value="">
+                    <img id="trip-cover-preview" class="hidden" style="width:100%;height:140px;object-fit:cover;border-radius:12px;margin-top:.5rem">
+                  </div>
+                  <div class="field">
+                    <label class="field-label">Nombre del viaje</label>
+                    <input type="text" id="trip-name" class="field-input" placeholder="Ej: Viaje a Japón" required>
+                  </div>
+                  <div class="field-row">
+                    <div class="field">
+                      <label class="field-label">Destino</label>
+                      <input type="text" id="trip-destination" class="field-input" placeholder="Ej: Tokio" required>
+                    </div>
+                  </div>
+                  <div class="field-row">
+                    <div class="field">
+                      <label class="field-label">Fecha inicio</label>
+                      <input type="date" id="trip-start" class="field-input" required>
+                    </div>
+                    <div class="field">
+                      <label class="field-label">Fecha fin</label>
+                      <input type="date" id="trip-end" class="field-input" required>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label class="field-label">Participantes</label>
+                    <div id="trip-participants-tags" class="tags-wrap"></div>
+                    <div style="display:flex;gap:.5rem">
+                      <input type="text" id="trip-participant-input" class="field-input" placeholder="Buscar contacto..." style="flex:1">
+                      <button type="button" id="btn-add-participant-tag" class="btn-add-tag">+</button>
+                    </div>
+                    <div id="trip-contact-suggestions" class="contact-suggestions" style="display:none"></div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Crear Viaje</button>
+                  <div id="new-trip-error" class="error-msg"></div>
+                </form>
+              </div>
+
+              <div id="new-trip-auto" class="hidden">
+                <button id="btn-back-to-modes-from-auto" class="btn-back" style="margin-bottom:1rem">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                  Volver
+                </button>
+                <div class="auto-coming-soon">
+                  <div class="empty-icon-box" style="background:#E8F2FF;padding:2.5rem">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4m0 10v4m-9-9h4m10 0h4"/><circle cx="12" cy="12" r="7"/></svg>
+                  </div>
+                  <h2 class="empty-title">Organización Automática</h2>
+                  <p class="empty-desc">Esta función te permitirá responder una encuesta y recibir recomendaciones de destinos personalizadas. ¡Próximamente disponible!</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="tab-current-trips" class="tab-panel">
+            <div class="content-pad">
+              <h2 class="section-title">Viajes en Curso</h2>
+              <div id="current-trips-list" class="trip-grid"></div>
+              <div id="current-trips-empty" class="empty-state">
+                <div class="empty-icon-box" style="background:#FFE5DD">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#EEB19A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                </div>
+                <h3 class="empty-title">Sin viajes en curso</h3>
+                <p class="empty-desc">Los viajes que estén activos aparecerán aquí.</p>
+                <button class="btn btn-create" id="go-to-new-trip-from-empty2" style="background:#EEB19A">Organizar nuevo viaje</button>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <section id="trip-detail" class="screen">
+      <button id="btn-back-detail" class="detail-back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="detail-layout">
+
+        <div id="detail-cover" class="detail-cover-figma">
+          <span id="cover-placeholder" class="cover-placeholder">Aún no hay imagen de portada</span>
+          <button id="btn-change-cover" class="detail-camera-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </button>
+          <input type="file" accept="image/*" id="change-cover-file" style="display:none">
+        </div>
+
+        <div class="detail-info-card">
+          <div id="detail-completed-badge" class="completed-badge" style="display:none">Viaje completado</div>
+          <div class="detail-info-row">
+            <div class="detail-info-items">
+              <span class="detail-info-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;vertical-align:middle"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+                <span id="detail-dest"></span>
+              </span>
+              <span class="detail-info-item date-right">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;vertical-align:middle"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span id="detail-date"></span>
+              </span>
+              <span id="detail-status" class="detail-status-badge"></span>
+            </div>
+            <button id="btn-edit-trip-detail" class="detail-edit-pencil">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </button>
+          </div>
+          <div id="detail-participants" class="detail-participants-row"></div>
+        </div>
+
+        <div class="day-selector-wrap">
+          <button id="day-prev" class="day-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div id="day-pills" class="day-pills"></div>
+          <button id="day-next" class="day-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <div class="detail-progress"><div id="detail-progress-fill" class="detail-progress-fill"></div></div>
+
+        <div class="detail-acts-header">
+          <h3 class="detail-acts-title">Actividades del día</h3>
+          <button id="btn-show-add-activity" class="detail-add-act-btn action-coral">+ Añadir</button>
+        </div>
+
+        <div id="activities-list" class="detail-acts-list"></div>
+
+        <form id="activity-form" class="activity-form-figma" style="display:none">
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label">Hora de inicio</label>
+              <input type="time" id="act-hora" class="field-input">
+            </div>
+            <div class="field">
+              <label class="field-label">Hora de fin</label>
+              <input type="time" id="act-fin" class="field-input">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Tipo</label>
+            <select id="act-tipo" class="field-input">
+              <option value="hotel">Hotel</option>
+              <option value="actividad">Actividad</option>
+              <option value="transporte">Vuelo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Actividad</label>
+            <input type="text" id="act-nombre" class="field-input" placeholder="Nombre de la actividad" required>
+          </div>
+          <div class="field">
+            <label class="field-label">Ubicación</label>
+            <input type="text" id="act-desc" class="field-input" placeholder="Ubicación opcional">
+          </div>
+          <button type="submit" class="btn btn-primary">Añadir</button>
+        </form>
+
+        <div class="detail-acts-header">
+          <h3 class="detail-acts-title">Álbum de fotos</h3>
+          <button id="btn-upload-album-photo" class="detail-add-act-btn action-coral">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+            Subir
+          </button>
+        </div>
+        <div id="album-list" class="detail-acts-list">
+          <div class="album-empty">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <p class="album-empty-text">No hay fotos</p>
+          </div>
+        </div>
+
+        <div class="detail-bottom-actions">
+          <button id="btn-edit-trip" class="btn btn-primary" style="flex:1">Marcar Completado</button>
+          <button id="btn-delete-trip" class="btn" style="flex:1;background:#fee2e2;color:#dc2626">Eliminar</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="edit-trip-modal" class="modal-overlay" style="display:none">
+      <div class="modal-backdrop" id="edit-modal-backdrop"></div>
+      <div class="modal-sheet">
+        <div class="modal-sheet-header">
+          <h3>Editar viaje</h3>
+          <button id="edit-modal-close" class="modal-close-btn">✕</button>
+        </div>
+        <form id="edit-modal-form">
+          <div class="field">
+            <label class="field-label">Nombre del viaje</label>
+            <input type="text" id="edit-modal-name" class="field-input" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label class="field-label">Fecha inicio</label>
+              <input type="date" id="edit-modal-start" class="field-input">
+            </div>
+            <div class="field">
+              <label class="field-label">Fecha fin</label>
+              <input type="date" id="edit-modal-end" class="field-input">
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Participantes</label>
+            <div id="edit-modal-participants" class="tags-wrap"></div>
+            <div style="display:flex;gap:.5rem">
+              <input type="text" id="edit-modal-participant-input" class="field-input" placeholder="Teléfono o nombre..." style="flex:1">
+              <button type="button" id="btn-add-participant-edit" class="btn-add-tag">+</button>
+            </div>
+            <div id="edit-modal-contact-suggestions" class="contact-suggestions" style="display:none"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:.5rem">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="confirm-modal" class="modal-overlay" style="display:none">
+      <div class="modal-backdrop" id="confirm-backdrop"></div>
+      <div class="modal-sheet" style="text-align:center">
+        <p id="confirm-text" style="font-size:1rem;color:var(--fg);line-height:1.5;margin:0.5rem 0 1.5rem"></p>
+        <div class="confirm-actions">
+          <button id="confirm-cancel" class="btn confirm-btn cancel">Cancelar</button>
+          <button id="confirm-ok" class="btn confirm-btn danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="settings-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-settings" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Ajustes</h1>
+        </header>
+        <div class="settings-body">
+          <div class="settings-group">
+            <div class="settings-group-title">Cuenta</div>
+            <button id="btn-edit-profile" class="settings-item">
+              <div class="settings-item-icon" style="background:#E8F2FF">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span class="settings-item-text">Mi Perfil</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button id="btn-invitaciones" class="settings-item">
+              <div class="settings-item-icon" style="background:#E8F2FF">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span class="settings-item-text">Invitaciones</span>
+              <span id="invitaciones-badge" class="badge-dot" style="display:none">0</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button id="btn-contactos" class="settings-item">
+              <div class="settings-item-icon" style="background:#E8F2FF">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="settings-item-text">Contactos</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="settings-group">
+            <div class="settings-group-title">Ayuda y Soporte</div>
+            <button id="btn-help" class="settings-item">
+              <div class="settings-item-icon" style="background:#FFF5F0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EEB19A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+              </div>
+              <span class="settings-item-text">Centro de ayuda</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button id="btn-support" class="settings-item">
+              <div class="settings-item-icon" style="background:#FFF5F0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EEB19A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span class="settings-item-text">Contactar soporte</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="settings-group" id="settings-admin-group" style="display:none">
+            <div class="settings-group-title">Administración</div>
+            <button id="btn-admin-panel" class="settings-item">
+              <div class="settings-item-icon" style="background:#374151">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <span class="settings-item-text">Panel de Administración</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="settings-group">
+            <div class="settings-group-title">Acciones</div>
+            <button id="btn-logout" class="settings-item">
+              <div class="settings-item-icon" style="background:#fed7aa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              </div>
+              <span class="settings-item-text" style="color:#ea580c">Cerrar sesión</span>
+            </button>
+            <button id="btn-delete-account" class="settings-item" style="border:none;outline:none">
+              <div class="settings-item-icon" style="background:#fecaca">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </div>
+              <span class="settings-item-text" style="color:#dc2626">Eliminar cuenta</span>
+            </button>
+          </div>
+          <div class="settings-footer">
+            <p>TravelUpp v1.0.0</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="edit-profile-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-profile" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Mi Perfil</h1>
+        </header>
+        <div class="settings-body">
+          <div class="profile-avatar-wrap">
+            <div id="profile-avatar" class="profile-avatar">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+          </div>
+          <form id="edit-profile-form" class="trip-form">
+            <div class="field">
+              <label class="field-label">Nombre</label>
+              <input type="text" id="edit-name" class="field-input" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label class="field-label">Teléfono</label>
+              <input type="text" id="edit-phone" class="field-input" readonly>
+            </div>
+            <div class="field">
+              <label class="field-label">Email</label>
+              <input type="email" id="edit-email" class="field-input" placeholder="email@ejemplo.com">
+            </div>
+            <div class="field">
+              <label class="field-label">Foto de perfil</label>
+              <button type="button" id="btn-select-photo" class="btn btn-photo-select" style="width:100%">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Seleccionar foto
+              </button>
+              <input type="file" accept="image/*" id="edit-photo-file" style="display:none">
+              <input type="hidden" id="edit-photo" value="">
+            </div>
+            <div id="edit-profile-error" class="error-msg"></div>
+            <div id="edit-profile-success" class="success-msg"></div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactos-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-contactos" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Contactos</h1>
+        </header>
+        <div class="settings-body">
+          <div id="contactos-list"></div>
+          <div id="contactos-empty" class="empty-state" style="display:none">
+            <div class="empty-icon-box" style="background:#E8F2FF">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h2 class="empty-title">Sin contactos</h2>
+            <p class="empty-desc">Añade contactos para invitarlos a tus viajes.</p>
+          </div>
+          <div id="contacto-error" class="error-msg" style="max-width:600px;margin:0 auto .5rem"></div>
+            <form id="add-contacto-form" class="field-row" style="max-width:600px;margin:0 auto">
+              <input type="tel" id="contacto-telefono" class="field-input" placeholder="Teléfono del contacto" required style="flex:1">
+              <button type="submit" class="btn btn-primary">Añadir</button>
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="invitaciones-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-invitaciones" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Invitaciones</h1>
+        </header>
+        <div class="settings-body" id="invitaciones-body">
+          <div id="invitaciones-loading" style="text-align:center;padding:3rem;color:var(--gray)">Cargando...</div>
+          <div id="invitaciones-list"></div>
+          <div id="invitaciones-empty" class="empty-state" style="display:none">
+            <div class="empty-icon-box" style="background:#E8F2FF">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#92C0E8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h2 class="empty-title">Sin invitaciones</h2>
+            <p class="empty-desc">No tienes invitaciones pendientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-help" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Centro de ayuda</h1>
+        </header>
+        <div class="settings-body">
+          <div class="settings-group">
+            <div class="settings-group-title">Preguntas frecuentes</div>
+            <div class="help-item">
+              <button class="help-question">¿Cómo crear un viaje manual?
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="help-answer">Selecciona "Manual" en la pantalla de nuevo viaje. Crea el viaje con tu destino elegido, organiza tu itinerario de actividades y guarda en el álbum todos tus recuerdos.</div>
+            </div>
+            <div class="help-item">
+              <button class="help-question">¿Cómo funciona el modo automático?
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="help-answer">Deja que TravelUpp te ayude a encontrar el viaje perfecto para ti o para tu grupo mediante una encuesta personalizada y un sistema de match para encontrar el mejor destino y alojamiento. Próximamente disponible.</div>
+            </div>
+            <div class="help-item">
+              <button class="help-question">¿Cómo invitar a mis amigos?
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="help-answer">Añade sus teléfonos en "Contactos" desde Ajustes. Al crear un viaje, búscalos en participantes y recibirán una invitación.</div>
+            </div>
+            <div class="help-item">
+              <button class="help-question">¿Cómo añadir actividades?
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+              <div class="help-answer">Desde el detalle del viaje, pulsa "+ Añadir" y completa día, hora, tipo y nombre de la actividad.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-support" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Contactar soporte</h1>
+        </header>
+        <div class="settings-body">
+          <div class="settings-group">
+            <div class="settings-group-title">Envíanos un mensaje</div>
+            <form id="support-form" class="trip-form" style="box-shadow:none;border:none;background:transparent">
+              <div class="field">
+                <label class="field-label">Nombre</label>
+                <input type="text" id="support-name" class="field-input" placeholder="Tu nombre" required>
+              </div>
+              <div class="field">
+                <label class="field-label">Email</label>
+                <input type="email" id="support-email" class="field-input" placeholder="tu@email.com" required>
+              </div>
+              <div class="field">
+                <label class="field-label">Asunto</label>
+                <input type="text" id="support-subject" class="field-input" placeholder="¿Sobre qué necesitas ayuda?" required>
+              </div>
+              <div class="field">
+                <label class="field-label">Mensaje</label>
+                <textarea id="support-message" class="field-input" rows="4" placeholder="Describe tu problema..." style="border-radius:16px;resize:vertical;min-height:100px" required></textarea>
+              </div>
+              <div id="support-error" class="error-msg"></div>
+              <div id="support-success" class="success-msg"></div>
+              <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-login-screen" class="screen">
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <div class="logo-circle" style="background:#374151">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h1 class="auth-title" style="color:#374151">Admin</h1>
+          <p class="auth-sub">Acceso al panel de administración</p>
+          <form id="admin-login-form">
+            <div class="field">
+              <label class="field-label">Contraseña de administrador</label>
+              <input type="password" id="admin-password" class="field-input" placeholder="••••" required>
+            </div>
+            <div id="admin-login-error" class="error-msg"></div>
+            <button type="submit" class="btn btn-auth" style="background:#374151">Acceder</button>
+          </form>
+          <div class="auth-footer">
+            <p><button type="button" id="go-back-from-admin-login" class="link-btn">Volver a inicio de sesión</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-panel-screen" class="screen">
+      <div class="settings-layout">
+        <header class="settings-header">
+          <button id="btn-back-from-admin" class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <h1 class="settings-header-title">Panel Admin</h1>
+        </header>
+        <div class="settings-body">
+          <div class="admin-stats-grid" id="admin-stats-grid">
+            <div class="admin-stat-card active" data-filter="all"><div class="admin-stat-num" id="admin-stat-all">0</div><div class="admin-stat-label">Todo</div></div>
+            <div class="admin-stat-card" data-filter="usuarios"><div class="admin-stat-num" id="admin-stat-usuarios">0</div><div class="admin-stat-label">Usuarios</div></div>
+            <div class="admin-stat-card" data-filter="viajes"><div class="admin-stat-num" id="admin-stat-viajes">0</div><div class="admin-stat-label">Viajes</div></div>
+            <div class="admin-stat-card" data-filter="activos"><div class="admin-stat-num" id="admin-stat-activos">0</div><div class="admin-stat-label">Activos</div></div>
+            <div class="admin-stat-card" data-filter="completados"><div class="admin-stat-num" id="admin-stat-completados">0</div><div class="admin-stat-label">Completados</div></div>
+          </div>
+          <div id="admin-users-section" class="settings-group">
+            <div class="settings-group-title">Usuarios</div>
+            <div id="admin-users-list" class="admin-list"><p style="color:#9ca3af;padding:1rem;font-size:.875rem">Cargando...</p></div>
+          </div>
+          <div id="admin-trips-section" class="settings-group">
+            <div class="settings-group-title">Viajes</div>
+            <div id="admin-trips-list" class="admin-list"><p style="color:#9ca3af;padding:1rem;font-size:.875rem">Cargando...</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

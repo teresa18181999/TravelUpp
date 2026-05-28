@@ -1,0 +1,138 @@
+travelupp-jakartaee/
+├── README.md                          # Documentación principal del proyecto
+├── INSTRUCCIONES.md                   # Guía paso a paso para uso y entrega
+├── informacion.md                     # Info de Figma y sistema de diseño
+├── .gitignore                         # Archivos a ignorar en git
+├── pom.xml                            # Configuración Maven (Java 21, Jakarta EE)
+├── Dockerfile                         # Imagen Docker multietapa con Maven + Tomcat
+├── docker-compose.yml                 # Orquestación de contenedores (MySQL, phpMyAdmin, Tomcat)
+│
+├── mysql/
+│   └── init/
+│       └── 01-travelupp.sql            # Script SQL de inicialización (tabla + datos)
+│
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/
+        │       └── travelupp/
+        │           │
+        │           ├── model/                          # ========== MODELO ==========
+        │           │   ├── ConexionBD.java             # Conexión a MySQL con JDBC
+        │           │   ├── Viaje.java                  # Entidad Viaje (POJO)
+        │           │   ├── ListarViajesDAO.java        # DAO para READ (SELECT)
+        │           │   ├── CrearViajeDAO.java          # DAO para CREATE (INSERT)
+        │           │   ├── ModificarViajeDAO.java      # DAO para UPDATE
+        │           │   └── EliminarViajeDAO.java       # DAO para DELETE
+        │           │
+        │           └── controller/                      # ========== CONTROLADOR ==========
+        │               ├── ListarViajesServlet.java    # GET /api/listar-viajes
+        │               ├── CrearViajeServlet.java      # POST /api/crear-viaje
+        │               ├── ModificarViajeServlet.java  # PUT /api/modificar-viaje
+        │               └── EliminarViajeServlet.java   # DELETE /api/eliminar-viaje
+        │
+        └── webapp/                                      # ========== VISTA ==========
+            ├── WEB-INF/
+            │   └── web.xml                             # Descriptor de deployment
+            │
+            ├── index.html                              # Página principal (HTML5 semántico)
+            │
+            ├── css/
+            │   └── estilos.css                         # Estilos con Flexbox, Grid, medidas relativas
+            │
+            └── js/
+                └── app.js                              # JavaScript con fetch, promesas, manejo de errores
+
+
+========================================
+CUMPLIMIENTO DE REQUISITOS DEL PROFESOR
+========================================
+
+✅ Jakarta EE (Java 21)
+✅ Patrón MVC (Model-View-Controller)
+✅ Arquitectura coherente (/model, /controller, /view)
+✅ Modelos aislados por proceso (4 DAOs: Listar, Crear, Modificar, Eliminar)
+✅ Controladores aislados por proceso (4 Servlets)
+✅ CRUD completo (Create, Read, Update, Delete)
+✅ MySQL 8.0 con script de inicialización
+✅ Docker Compose con 3 contenedores orquestados
+✅ Listo para desplegar en Railway.com
+
+✅ Frontend HTML5 semántico
+✅ CSS con Flexbox y Grid
+✅ Medidas relativas (rem, em, %, vh/vw) - NO px absolutos
+✅ Diseño responsive con media queries (Mobile, Tablet, Desktop)
+✅ Textos legibles con buen contraste
+✅ Navegación accesible (alt en imágenes, label en formularios)
+
+✅ JavaScript vanilla (NO frameworks)
+✅ Fetch API con promesas
+✅ Envío y recepción de JSON
+✅ Manejo de errores con then() y catch()
+
+✅ Guía de diseño en informacion.md
+✅ Paleta de colores definida
+✅ Tipografías y jerarquías
+✅ Formularios, controles e iconografía
+✅ Estados (hover, focus, error, éxito)
+
+========================================
+ENDPOINTS API REST
+========================================
+
+GET    /api/listar-viajes     → ListarViajesServlet  → ListarViajesDAO  → SELECT * FROM viajes
+POST   /api/crear-viaje       → CrearViajeServlet    → CrearViajeDAO    → INSERT INTO viajes
+PUT    /api/modificar-viaje   → ModificarViajeServlet → ModificarViajeDAO → UPDATE viajes
+DELETE /api/eliminar-viaje    → EliminarViajeServlet → EliminarViajeDAO → DELETE FROM viajes
+
+========================================
+FLUJO DE DATOS (Ejemplo: Crear Viaje)
+========================================
+
+1. Usuario rellena formulario en index.html
+2. JavaScript captura submit → preventDefault()
+3. fetch('/api/crear-viaje', { method: 'POST', body: JSON.stringify(datos) })
+4. CrearViajeServlet recibe la petición
+5. Deserializa JSON con Gson
+6. Crea objeto Viaje y llama a CrearViajeDAO
+7. CrearViajeDAO ejecuta INSERT en MySQL
+8. Retorna ID generado
+9. CrearViajeServlet serializa respuesta JSON
+10. JavaScript recibe respuesta en .then()
+11. Si ok=true, recarga lista de viajes
+12. Si error, lo captura en .catch() y muestra mensaje
+
+========================================
+STACK TECNOLÓGICO
+========================================
+
+Backend:
+  - Java 21
+  - Jakarta Servlet API 6.0
+  - MySQL Connector/J 8.4.0
+  - Gson 2.11.0
+  - Apache Tomcat 10.1
+  - Maven 3.9
+
+Frontend:
+  - HTML5
+  - CSS3 (Flexbox, Grid, Custom Properties)
+  - JavaScript ES6+ (Fetch API, Promises, Async)
+
+DevOps:
+  - Docker
+  - Docker Compose
+  - MySQL 8.0
+  - phpMyAdmin
+
+Diseño:
+  - Figma (Wireframes, UI Design, Design System)
+
+========================================
+URLS DE ACCESO (Desarrollo Local)
+========================================
+
+http://localhost:8080           → Aplicación Web travelupp
+http://localhost:8081           → phpMyAdmin (root/root)
+mysql://localhost:3307/travelupp_db → MySQL directo (root/root)
+
